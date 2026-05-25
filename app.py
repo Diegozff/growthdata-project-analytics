@@ -51,18 +51,21 @@ if "uploaded_name" not in st.session_state: st.session_state.uploaded_name = Non
 with st.sidebar:
 
     # ── Workspace header ──────────────────────────────────────────────────
-    logo_col, name_col = st.columns([1, 2.5])
-    with logo_col:
-        if os.path.exists(LOGO_PATH):
-            st.image(LOGO_PATH, width=52)
-        else:
-            st.markdown('<div style="font-size:2rem;padding:6px 0;">🏗️</div>', unsafe_allow_html=True)
-    with name_col:
+    if os.path.exists(LOGO_PATH):
         st.markdown(f"""
-        <div style="padding:8px 0 0 0;">
-            <p style="color:{BRAND['text']};font-size:0.88rem;font-weight:700;margin:0;
-                      letter-spacing:-0.2px;">GrowthData Analytics</p>
-            <p style="color:{BRAND['text_muted']};font-size:0.68rem;margin:2px 0 0 0;">
+        <div style="background:white;border-radius:12px;padding:10px 14px;
+                    margin:12px 12px 4px 12px;text-align:center;
+                    box-shadow:0 2px 12px rgba(0,0,0,0.4);">
+        """, unsafe_allow_html=True)
+        st.image(LOGO_PATH, use_container_width=True)
+        st.markdown("</div>", unsafe_allow_html=True)
+    else:
+        st.markdown(f"""
+        <div style="padding:16px 16px 8px 16px;border-bottom:1px solid {BRAND['border']};">
+            <p style="color:{BRAND['text']};font-size:1rem;font-weight:700;margin:0;">
+                🏗️ GrowthData Analytics
+            </p>
+            <p style="color:{BRAND['text_muted']};font-size:0.7rem;margin:2px 0 0 0;">
                 Project Controls
             </p>
         </div>
