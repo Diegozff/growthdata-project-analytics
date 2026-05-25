@@ -2,6 +2,7 @@
 Export Module — Excel and PDF report generation.
 """
 
+from __future__ import annotations
 import io
 import datetime
 import pandas as pd

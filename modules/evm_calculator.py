@@ -2,6 +2,7 @@
 Earned Value Management (EVM) Engine
 Calculates all PMBOK-compliant EVM metrics per task and at project level.
 """
+from __future__ import annotations
 
 import pandas as pd
 import numpy as np

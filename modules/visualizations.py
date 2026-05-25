@@ -2,6 +2,7 @@
 Visualizations Module — Plotly charts with dark corporate theme.
 All charts share a unified GrowthData brand palette.
 """
+from __future__ import annotations
 
 import pandas as pd
 import numpy as np
